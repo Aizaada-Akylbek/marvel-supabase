@@ -6,13 +6,11 @@ const generateBtn = document.getElementById("generate-btn");
 const searchInput = document.getElementById("search-input");
 const statusMessage = document.getElementById("status");
 
-const supabaseUrl =
-  import.meta.env?.VITE_SUPABASE_URL || window.SUPABASE_CONFIG?.url;
-const supabaseAnonKey =
-  import.meta.env?.VITE_SUPABASE_ANON_KEY || window.SUPABASE_CONFIG?.anonKey;
+const supabaseUrl = window.SUPABASE_CONFIG?.url;
+const supabaseAnonKey = window.SUPABASE_CONFIG?.anonKey;
 
 if (!supabaseUrl || !supabaseAnonKey) {
-  throw new Error("Missing Supabase env vars. Check .env for VITE_SUPABASE_URL.");
+  throw new Error("Missing Supabase browser config.");
 }
 
 const supabase = createClient(supabaseUrl, supabaseAnonKey);

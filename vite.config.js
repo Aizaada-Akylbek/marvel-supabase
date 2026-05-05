@@ -2,7 +2,7 @@ import { defineConfig } from 'vite';
 import { resolve } from 'path';
 
 export default defineConfig({
-  base: '/', // Adjust if your app is served from a subpath
+  base: './',
   build: {
     rollupOptions: {
       input: {              
